@@ -1,7 +1,17 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 int numOfBST(int);
+
+struct node {
+    int data;
+    struct node *left, *right;
+};
+
+struct node* Node(int data) {
+    // need to use malloc to allocate the memory
+};
 
 int main() {
     
