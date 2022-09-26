@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-int main() {
+int main(int argc, char** argv) {
     // Strings do not exist in C, use 2D char
     char map[20][100];
 
@@ -24,11 +24,10 @@ int main() {
 
     // This is for starting input. Watch video!
     
-    /*
-    if(args.length > 0){
+    
+    if(argc > 0){
             argsCheck = true;
         }
-    */
 
 	while(proceed){
 
@@ -55,11 +54,11 @@ int main() {
             scanf("%d", &input);
         }else{
             // The args is to check for args before running
-            if(argsRunIndex == args.length){
+            if(argsRunIndex == argc){
                 argsCheck=false;
                 *input = "e";
             }else{
-                *input = args[argsRunIndex];
+                *input = argv[argsRunIndex];
                 argsRunIndex++;
             }
         }
