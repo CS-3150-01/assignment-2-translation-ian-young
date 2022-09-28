@@ -1,24 +1,28 @@
 #include <stdio.h>
-#include <math.h>
 #include <stdlib.h>
 
+int factorial(int);
 int numOfBST(int);
 
-struct node {
-    int data;
-    struct node *left, *right;
-};
-
-struct node* Node(int data) {
-    // need to use malloc to allocate the memory
-};
-
 int main() {
-    
+    printf("Total number of possible Binary Search Trees with given key: %d", numOfBST(5));
     return 0;
 }
 
-numOfBST(int key) {
+int factorial(int num) {    
+        int fact = 1;    
+        if(num == 0)    
+            return 1;    
+        else {    
+            while(num > 1) {    
+                fact = fact * num;    
+                num--;    
+            }    
+            return fact;    
+        }    
+    }   
+
+int numOfBST(int key) {
     int catalanNumber = factorial(2 * key)/(factorial(key + 1) * factorial(key)); 
     return catalanNumber;
 }
