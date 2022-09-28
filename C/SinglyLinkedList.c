@@ -1,34 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <malloc.h>
 
-void insert(struct Node**, int);
-void display(struct Node*);
-
-struct Node {
+ struct Node {
     int data;
     struct Node* next;
 };
+
+//Globally set head and current nodes
+struct Node *head = NULL;
+struct Node *current = NULL;
+
+void addNode(struct Node** head, int data);
+void showNodes(struct Node* node);
 
 int main() {
     /**It is important to note that all functions will need to refer
      * to the head in one way or another for the code to work... Found
      * that out the hard way. **/
 
-    struct Node* head = NULL; // Set the head
-
     //Add nodes to the list    
-    insert(&head,1);
-    insert(&head,2);
-    insert(&head,3);
-    insert(&head,4);  
+    addNode(&head,1);
+    addNode(&head,2);
+    addNode(&head,3);
+    addNode(&head,4);  
             
     //Displays the nodes present in the list    
-    display(head); // Only need & if changing!!
+    showNodes(head); // Only need & if changing!!
 
     return 0;
 }
 
-void insert (struct Node** head, int data) {
+void addNode (struct Node** head, int data) {
     struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
 
     newNode->data = data;
@@ -37,7 +40,7 @@ void insert (struct Node** head, int data) {
     *head = newNode;
 };
 
-void display (struct Node* node) {
+void showNodes (struct Node* node) {
     printf("\nYour linked list is: ");
 
     while (node != NULL) {
