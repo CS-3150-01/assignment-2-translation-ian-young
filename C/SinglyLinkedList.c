@@ -1,11 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-
- struct Node {
-    int data;
-    struct Node* next;
-};
+#include "SinglyLinkedList.h"
 
 //Globally set head and current nodes
 struct Node *head = NULL;
