@@ -90,7 +90,7 @@ int main(int argc, char** argv) {
                 }
                 break;
             case 'e':
-                printf("You are facing in the "+directions[currentDirection]+"ward direction!");
+                printf("You are facing in the %s ward direction!", directions[currentDirection]);
                 break;
             case 'q':
                 proceed = false;
