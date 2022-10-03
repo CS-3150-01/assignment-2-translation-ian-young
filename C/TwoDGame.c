@@ -3,7 +3,7 @@
 
 int main(int argc, char** argv) {
     // Strings do not exist in C, use 2D char
-    char map[20][100];
+    char* map[20][100];
 
     map[2][2] = "P";
 
@@ -12,7 +12,7 @@ int main(int argc, char** argv) {
 
     int argsRunIndex = 0;
 
-    char directions[] = {"North", "East", "South", "West"};
+    const char* directions[] = {"North", "East", "South", "West"};
     int directionX[]    = {      0,     -1,       0,      1};
     int directionY[]    = {      1,      0,      -1,      0};
 
@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
             // The args is to check for args before running
             if(argsRunIndex == argc){
                 argsCheck=false;
-                *input = "e";
+                *input = 'e';
             }else{
                 *input = argv[argsRunIndex];
                 argsRunIndex++;
